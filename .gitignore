@@ -7,6 +7,10 @@
 *.png
 *.jpg
 
+#Arсhives
+*.zip
+*.rar
+
 # User-specific files
 *.rsuser
 *.suo
