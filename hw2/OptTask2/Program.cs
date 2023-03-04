@@ -28,7 +28,7 @@ int tmp = proggerNum;
 if(proggerNum >= 0){
     tmp %= 100;
     if (tmp >=11 && tmp <=19) proggerWord += pluralWordEnding;
-    else{image.png
+    else{
         tmp %= 10;
         if(tmp==1) proggerWord += nominativeWordEnding; //по идее в этот момент мы делаем лишнее действие, не изменяя строку, 
                                                         //однако, считаю необходимым оставить для прослеживания логики работы программы
