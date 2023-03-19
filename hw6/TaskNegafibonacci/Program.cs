@@ -13,8 +13,8 @@ getNegaFibList(k);
 
 void getNegaFibList(int num){
 
-    int a = -1;
-    int b = 1;   
+    int a = 1;
+    int b = -1;   
     for (int i = 0; i < num; i++)
     {
         a=  -b - a;
