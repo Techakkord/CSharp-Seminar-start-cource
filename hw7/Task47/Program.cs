@@ -3,9 +3,9 @@
 /*Задайте двумерный массив размером m×n, 
 заполненный случайными вещественными числами.*/
 
-int m = 4;
-int n = 3;
-int[,]arr = MyArr.getArr(m,n);
+int m = 3;
+int n = 4;
+int[,]arr = MyArr.getRandArr(m,n);
 MyArr.displayArr(arr);
 
 public static class MyArr{
@@ -17,8 +17,8 @@ public static class MyArr{
         }
     }
     public static void displayArr(int[,] array){
-        for(int j = 0; j < array.GetLength(1); ++j){
-            for (int i = 0; i < array.GetLength(0); ++i)
+        for(int i = 0; i < array.GetLength(0); ++i){
+            for (int j = 0; j < array.GetLength(1); ++j)
             {
                 Console.Write($"{array[i,j]} ");
             }
@@ -32,7 +32,7 @@ public static class MyArr{
         }
         return arr;
     }
-    public static int[,] getArr(int m, int n){
+    public static int[,] getRandArr(int m, int n){
         int[,] arr = new int[m,n];
         Random rnd =new Random();
         for (int i = 0; i < m; i++)

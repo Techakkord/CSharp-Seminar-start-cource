@@ -6,7 +6,7 @@
 что такого элемента нет.*/
 
 int m = 3;
-int n = 2;
+int n = 3;
 int num = 5;
 int[,]arr = MyArr.getArr(m,n);
 MyArr.displayArr(arr);
@@ -22,8 +22,8 @@ public static class MyArr{
     }
     public static void displayArr(int[,] array){
        Console.WriteLine("---------------");
-        for(int j = 0; j < array.GetLength(1); ++j){
-            for (int i = 0; i < array.GetLength(0); ++i)
+        for(int i = 0; i < array.GetLength(0); ++i){
+            for (int j = 0; j < array.GetLength(1); ++j)
             {
                 Console.Write($"{array[i,j]} ");
             }
