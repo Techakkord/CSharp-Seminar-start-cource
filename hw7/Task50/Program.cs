@@ -72,6 +72,7 @@ public static class MyArr{
                     position[0,0] = i;
                     position[1,0] = j;
                     ++count;
+                    
                 }
             }
             
