@@ -1,23 +1,30 @@
 ﻿//Знакомство с языками программирования (семинары)
-//ДЗ 7. Задача 50
-/*Напишите программу, которая на вход принимает 
-значение элемента в двумерном массиве, и возвращает 
-позицию этого элемента или же указание, 
-что такого элемента нет.*/
-
+//ДЗ 7. Задача 52
+/*Задайте двумерный массив из целых чисел. Найдите 
+среднее арифметическое элементов в каждом столбце.*/
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 int m = 3;
-int n = 3;
-int num = 5;
+int n = 4;
 int[,]arr = MyArr.getArr(m,n);
 MyArr.displayArr(arr);
-int [,] listFind = MyArr.findNum(num,arr);
-MyArr.displayArr(listFind);
+double [] listAverage = MyArr.getListAverage(arr);
+MyArr.displayArr(listAverage);
 public static class MyArr{
     public static void displayArr(int[] array){
         for(int i = 0; i < array.Length; ++i){
             if(i==0)Console.Write($"["); 
             if(i==array.Length-1) Console.WriteLine($"{array[i]}]");
             else Console.Write($"{array[i]}, ");
+        }
+    }
+    public static void displayArr(double[] array){
+        for(int i = 0; i < array.Length; ++i){
+            if(i==0)Console.Write($"["); 
+            if(i==array.Length-1) Console.WriteLine($"{array[i]}]");
+            else Console.Write($"{array[i]} ");
         }
     }
     public static void displayArr(int[,] array){
@@ -62,6 +69,7 @@ public static class MyArr{
         return arr;
     }   
     public static int[,] findNum(int num,int [,] arr){
+
         int [,] position = {{-404},{-404}}; 
         int count = 0;
         for (int i = 0; i < arr.GetLength(0); i++)
@@ -72,7 +80,7 @@ public static class MyArr{
                     position[0,0] = i;
                     position[1,0] = j;
                     ++count;
-
+                    
                 }
             }
             
@@ -80,4 +88,20 @@ public static class MyArr{
         if(count==0) Console.WriteLine("Такого числа нет");
         return position;
     } 
+    public static double[] getListAverage(int[,] arr){
+        double sum= 0;
+        double quantity = Convert.ToDouble(arr.GetLength(1)); 
+        double[] average = new double[arr.GetLength(1)];  
+
+        for (int j = 0; j < arr.GetLength(1); j++)
+        {
+            sum =0;
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                sum+=arr[i,j]; 
+            }
+            average[j] = sum/quantity;
+        } 
+        return average;
+    }
 }
