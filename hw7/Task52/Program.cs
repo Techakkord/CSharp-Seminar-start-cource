@@ -23,8 +23,8 @@ public static class MyArr{
     public static void displayArr(double[] array){
         for(int i = 0; i < array.Length; ++i){
             if(i==0)Console.Write($"["); 
-            if(i==array.Length-1) Console.WriteLine($"{array[i]}]");
-            else Console.Write($"{array[i]} ");
+            if(i==array.Length-1) Console.WriteLine($"{Math.Round(array[i],2)}]");
+            else Console.Write($"{Math.Round(array[i],1)} ");
         }
     }
     public static void displayArr(int[,] array){
@@ -90,7 +90,7 @@ public static class MyArr{
     } 
     public static double[] getListAverage(int[,] arr){
         double sum= 0;
-        double quantity = Convert.ToDouble(arr.GetLength(1)); 
+        double quantity = Convert.ToDouble(arr.GetLength(0)); 
         double[] average = new double[arr.GetLength(1)];  
 
         for (int j = 0; j < arr.GetLength(1); j++)
