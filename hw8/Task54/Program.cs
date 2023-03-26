@@ -51,7 +51,7 @@ public static class MyArr{
                 {
                     if(arr[i,j] < arr[i,minId]) minId = j;
                 }
-                temp = arr[i,size -1];56
+                temp = arr[i,size -1];
                 arr[i,size -1] = arr[i,minId];
                 arr[i,minId] =temp;
                 --size;
