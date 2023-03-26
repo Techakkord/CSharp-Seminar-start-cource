@@ -11,12 +11,12 @@
 
 int[,,] arr =new int[2,2,2] {
                                 {
-                                    {66,25},
-                                    {34,41}
+                                    {66,27},
+                                    {25,90}
                                 },
                                 {
-                                    {27,90},
-                                    {26,55}
+                                    {34,26},
+                                    {41,55}
                                 }
                             };
 MyArr.display3DimArr(arr);
@@ -27,9 +27,9 @@ public static class MyArr{
     public static void display3DimArr(int [,,] arr){
         for (int i = 0; i < arr.GetLength(0); i++)
         {
-            for (int j = 0; j < arr.GetLength(1); j++)
+            for (int k = 0; k < arr.GetLength(2); k++)
             {
-                for (var k = 0; k < arr.GetLength(2); k++)
+                for (var j = 0; j < arr.GetLength(1); j++)
                 {
                     Console.Write($"{arr[i,j,k]}({i},{j},{k})  "); 
                 }
